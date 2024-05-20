@@ -25,3 +25,4 @@ stages
      { sh 'mvn package sonar:sonar '} 
 }
 }
+}
