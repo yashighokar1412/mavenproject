@@ -18,12 +18,11 @@ stages
     sh 'mvn package'
 } } }
   
-
- stage('sonar analysis & generate artifacts')
- {steps {  withMaven(globalMavenSettingsConfig: '', jdk: 'JAVA_HOME', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true) 
-    { withSonarQubeEnv(credentialsId: 'sonar1', installationName: 'sonar1') 
-     { sh 'mvn package sonar:sonar '} 
-} } }
  
+ stage('sonar analysis')
+ {steps { withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonar') 
+     {sh 'sonar:sonar'} 
+} } }
+
 }
 }
