@@ -16,3 +16,4 @@ stages
     sh 'mvn package'
   
 } } }
+}
