@@ -20,8 +20,8 @@ stages
   
  
  stage('sonar analysis')
- {steps { withSonarQubeEnv(credentialsId: 'jenkins-integration', installationName: 'jenkins-integration') 
-     {sh 'jenkins-integration:jenkins-integration'} 
+ {steps { withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonar') 
+     {sh 'sonar:sonar'} 
 } } }
 
 }
