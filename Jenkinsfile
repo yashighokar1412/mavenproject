@@ -19,5 +19,10 @@ stage('sonar analysis & generate artifacts')
      { sh 'mvn package sonar:sonar'} 
 } } }
 
+ stage('deploy to tomcat-dev')
+ {steps { sshagent(['tomcatdev']) 
+   { sh 'scp -o StrictHostKeyChecking=no webapp/target/webapp.war ec2-user@174.129.136.87:/usr/share/tomcat/webapps/'}  
+ } }
+ 
 }
 }
