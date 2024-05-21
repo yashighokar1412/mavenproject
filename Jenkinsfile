@@ -21,7 +21,7 @@ stages
  
  stage('sonar analysis')
  {steps { withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonar') 
-     {sh 'mvn package sonar:sonar'} 
+     {sh 'sonar:sonar'} 
 } } }
 
 }
