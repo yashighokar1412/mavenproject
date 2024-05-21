@@ -20,3 +20,4 @@ stage('sonar analysis & generate artifacts')
 } } }
 
 }
+}
